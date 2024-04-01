@@ -1,0 +1,118 @@
+### Instalar REST CLIENT ( nao coloquei metodo de login aqui ) entao e melhor testar por aqui tirando a validação do index.js
+
+
+### Cadastrar novos autores
+POST http://0.0.0.0:4000/autor
+Content-Type: application/json
+
+{
+    "nomeAutor": "Hugoo"
+}
+
+### cadastrar categoria para um livro
+POST http://0.0.0.0:4000/livroCategoria
+Content-Type: application/json
+
+{
+    "livroCodigo": 3,
+    "categoriaCodigo": [1,2,3]
+}
+
+### deletar categoria para um livro
+DELETE http://0.0.0.0:4000/livroCategoria
+Content-Type: application/json
+
+{
+    "livroCodigo": 3,
+    "categoriaCodigo": 1
+}
+
+
+### cadastrar categoria livros
+POST http://0.0.0.0:4000/categoria
+Content-Type: application/json
+
+{
+    "nomeCategoria": "teste"
+}
+
+### lista categorias
+GET http://0.0.0.0:4000/categoria
+
+### Atualizar categorias livros
+PUT http://0.0.0.0:4000/categoria
+Content-Type: application/json
+
+{
+    "codigoCategoria": 6,
+    "nomeCategoria": "Humor Acido"
+}
+
+### deletar categorias
+DELETE http://0.0.0.0:4000/categoria
+Content-Type: application/json
+
+{
+    "codigoCategoria": 6
+}
+
+### Atualizar autores
+PUT http://0.0.0.0:4000/autor
+Content-Type: application/json
+
+{
+    "codigoAutor": 9,
+    "nomeAutor": "Hugo Maciel"
+}
+
+### deletar autores
+DELETE http://0.0.0.0:4000/autor
+Content-Type: application/json
+
+{
+    "codigoAutor": 7
+}
+
+### listar autores pelos codigos
+GET http://0.0.0.0:4000/autor/9
+
+### Listar todos os autores
+GET http://0.0.0.0:4000/autor
+
+#### ------------- ####
+
+
+### Listar Livro pelo codigo
+GET http://0.0.0.0:4000/livro
+
+
+### Cadastrar novos livros
+POST http://0.0.0.0:4000/livro
+Content-Type: application/json
+
+{
+    "livroTitulo": "Velozes e furiosos 5",
+    "livroDataPublicacao": "2014-02-06",
+    "livroQtdEstoque": 12,
+    "autor": 2
+}
+
+### Atualizar livros
+PUT http://0.0.0.0:4000/livro
+Content-Type: application/json
+
+{
+    "livroCodigo": 6,
+    "livroTitulo": "Jogos vorazes 2",
+    "livroDataPublicacao": "2014-02-06",
+    "livroQtdEstoque": 11,
+    "autor": 1
+}
+
+### deletar livros
+DELETE http://0.0.0.0:4000/livro
+Content-Type: application/json
+
+{
+    "livroCodigo": 4
+}
